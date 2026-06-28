@@ -1,18 +1,37 @@
 {
   "name": "server",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun",
+    "start": "bun run ./dist/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "bcryptjs": "^3.0.2",
+    "docx": "^9.5.1",
     "dotenv": "^17.4.2",
+    "express-validator": "^7.3.1",
     "hono": "^4.12.27",
-    "pg": "^8.22.0"
+    "hono-rate-limiter": "^0.4.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.5",
+    "pdfkit": "^0.17.2",
+    "pg": "^8.22.0",
+    "svg-to-pdfkit": "^0.1.8"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
     "@types/bun": "latest",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.0.0",
     "@types/node": "^26.0.1",
+    "@types/nodemailer": "^7.0.1",
+    "@types/pdfkit": "^0.17.3",
     "@types/pg": "^8.20.0",
     "prisma": "^7.8.0"
   }
